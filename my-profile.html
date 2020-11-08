@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mi perfil</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Envíos gratuitos. Garantía de devolución o reembolso de 30 días.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" with="40" height="40" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Inicio</a></li>
+                            <li><a href="#">Categorías ▾</a>
+                                <ul class="dropdown">
+                                    <li><a href="./categories.html">Autos</a></li>
+                                    <li><a href="./categories.html">Juguetes</a></li>
+                                    <li><a href="./categories.html">Muebles</a></li>
+                                    <li><a href="./categories.html">Herramientas</a></li>
+                                    <li><a href="./categories.html">Computadoras</a></li>
+                                    <li><a href="./categories.html">Vestimenta</a></li>
+                                    <li><a href="./categories.html">Artículos Deportivos</a></li>
+                                    <li><a href="./categories.html">Electrodomesticos</a></li>
+                                    <li><a href="./categories.html">Celulares</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./products.html">Productos</a></li>
+                            <li><a href="./sell.html">Vender</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="#" id="username">▾</a>
+                                <ul class="dropdown">
+                                    <li><a href="./my-profile.html">Mi perfil</a></li>
+                                    <li><a href="./cart.html">Mi carrito</a></li>
+                                    <li><a href="./index.html" onclick="end_session();">Cerrar sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Mi perfil</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact spad1">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__form">
+
+
+                        <form action="#">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col d-flex justify-content-center">
+                                    <img src="" alt="Preview" id="imgPreview" height="180px" width="180px" style="margin-bottom: 10px;"
+                                        class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col d-flex justify-content-center">
+                                    <input type="file" id="myFileInput" onchange="loadFile(event)" accept="image/*"
+                                        style="display: none;">
+                                    <label for="myFileInput">
+                                        <span class="site-btn-profile" style="cursor: pointer; margin-bottom: 15px;">Selecciona una foto de
+                                            perfil</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Nombres" id="name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Apellidos" id="last_name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="number" placeholder="Edad" id="age">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="number" placeholder="Teléfono de contacto" id="phone_number">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input type="email" placeholder="Correo electrónico" id="email">
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col">
+                        <button type="submit" id="save" class="site-btn-profile" onclick="save_profile_info();">Guardar</button>
+                    </div>
+                    <button type="submit" id="modify" class="site-btn-profile" onclick="modify_profile_info()" style="display: none;">Modificar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div id="alertModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">Se deben completar los campos requeridos.</h6>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                        </div>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>e-Commerce</h6>
+                        <ul>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                            <li><a href="#">Políticas de Privacidad</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Información Útil</h6>
+                        <ul>
+                            <li><a href="#">Formas de Pago</a></li>
+                            <li><a href="#">Métodos de Envío</a></li>
+                            <li><a href="#">Factura Electrónica</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Suscripción</h6>
+                        <div class="footer__newslatter">
+                            <p>Recibí lo mejor de e-Commerce directamente en tu email</p>
+                            <form action="#">
+                                <input type="text" placeholder="Tu email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <div id="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!---SCRIPTS-->
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
+
+    <!---SCRIPTS-->
+
+
+</body>
